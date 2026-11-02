@@ -1,519 +1,439 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Hamodehh's World</title>
-
+<meta name="theme-color" content="#090909">
+<title>HAMODEHH — MY LITTLE UNIVERSE</title>
 <style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  background: #080808;
-  color: #fff;
-  font-family: Arial, sans-serif;
-  text-align: center;
-}
-
-/* HEADER */
-
-header {
-  padding: 55px 15px;
-  background: linear-gradient(135deg, #000, #333, #111);
-  border-bottom: 2px solid #fff;
-}
-
-header h1 {
-  font-size: 34px;
-  color: #fff;
-  margin-bottom: 15px;
-  letter-spacing: 1px;
-}
-
-header p {
-  color: #ccc;
-  margin: 8px;
-}
-
-/* NAVIGATION */
-
-nav {
-  padding: 17px 5px;
-  background: #171717;
-  border-bottom: 1px solid #444;
-  position: sticky;
-  top: 0;
-  z-index: 10;
-}
-
-nav a {
-  color: #fff;
-  text-decoration: none;
-  margin: 8px;
-  display: inline-block;
-  font-size: 14px;
-  transition: 0.3s;
-}
-
-nav a:hover {
-  color: #aaa;
-}
-
-/* SECTIONS */
-
-section {
-  padding: 45px 15px;
-  max-width: 850px;
-  margin: auto;
-}
-
-h2 {
-  color: #fff;
-  margin-bottom: 25px;
-  font-size: 27px;
-}
-
-.card {
-  background: linear-gradient(145deg, #202020, #101010);
-  border: 1px solid #555;
-  border-radius: 16px;
-  padding: 28px 18px;
-  margin: 18px auto;
-  max-width: 650px;
-  box-shadow: 0 5px 25px #000;
-  transition: 0.3s;
-}
-
-.card:hover {
-  border-color: #aaa;
-  transform: translateY(-3px);
-}
-
-.card h3 {
-  color: #eee;
-  margin-bottom: 16px;
-}
-
-.card p {
-  color: #ccc;
-  line-height: 1.8;
-}
-
-/* BUTTONS */
-
-button,
-.music-link {
-  background: #fff;
-  color: #000;
-  border: 1px solid #fff;
-  padding: 13px 21px;
-  border-radius: 9px;
-  margin: 9px 5px;
-  cursor: pointer;
-  font-size: 15px;
-  transition: 0.3s;
-  display: inline-block;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-button:hover,
-.music-link:hover {
-  background: #222;
-  color: #fff;
-  transform: scale(1.05);
-}
-
-/* PHOTO */
-
-#myPhoto {
-  display: none;
-  width: 220px;
-  max-width: 90%;
-  border-radius: 15px;
-  margin: 22px auto;
-  border: 3px solid #fff;
-}
-
-/* INPUT */
-
-input {
-  padding: 13px;
-  width: 145px;
-  border-radius: 8px;
-  border: 1px solid #aaa;
-  background: #222;
-  color: #fff;
-  text-align: center;
-  font-size: 16px;
-}
-
-/* GAME RESULTS */
-
-#result,
-#activity,
-#moodResult,
-#quizResult {
-  color: #fff;
-  margin-top: 18px;
-  font-size: 18px;
-  min-height: 25px;
-}
-
-/* FOOTER */
-
-footer {
-  background: #151515;
-  padding: 30px 15px;
-  color: #aaa;
-  border-top: 1px solid #555;
-  line-height: 2;
-}
-
-.heart {
-  color: #fff;
-}
-
-@media (max-width: 480px) {
-  header h1 {
-    font-size: 27px;
-  }
-
-  nav a {
-    margin: 6px;
-    font-size: 12px;
-  }
-
-  section {
-    padding: 30px 12px;
-  }
+:root{--bg:#090909;--card:#151515;--text:#f5f5f5;--muted:#aaa;--line:#333}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,sans-serif;line-height:1.6}
+button,input{font:inherit}
+button{cursor:pointer}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1050px,92%);margin:auto}
+header{position:sticky;top:0;background:#090909ed;backdrop-filter:blur(12px);border-bottom:1px solid #292929;z-index:10}
+.nav{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding:15px 0}
+.brand{font-weight:900;letter-spacing:2px}
+.brand span{color:#888}
+.nav-links{display:flex;gap:12px;flex-wrap:wrap}
+.nav-links a{font-size:13px;color:#aaa}
+.nav-links a:hover{color:white}
+.hero{padding:100px 0 70px;min-height:530px;display:flex;align-items:center}
+.eyebrow{color:#aaa;letter-spacing:4px;font-size:12px;text-transform:uppercase}
+h1{font-size:clamp(48px,9vw,100px);line-height:1;margin:20px 0;letter-spacing:-5px}
+.soft{color:#777}
+.hero-copy{color:#aaa;max-width:600px;font-size:17px}
+.btn,.small-btn{border:0;border-radius:30px;padding:12px 19px;background:white;color:black;font-weight:bold;display:inline-block}
+.btn.secondary{background:transparent;color:white;border:1px solid #444}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}
+.clock-card{display:inline-flex;align-items:center;gap:15px;margin-top:35px;padding:13px 18px;border:1px solid #333;border-radius:15px}
+#clock{font-size:22px;font-weight:bold}
+#date{color:#aaa;font-size:12px}
+section{padding:55px 0;scroll-margin-top:85px}
+.section-head{margin-bottom:22px}
+.section-kicker{font-size:11px;color:#888;letter-spacing:3px}
+h2{font-size:35px;margin:5px 0}
+.section-note{color:#999;font-size:14px}
+.card{background:linear-gradient(140deg,#191919,#101010);border:1px solid #333;border-radius:20px;padding:23px}
+.about-grid,.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:17px}
+.about-main p{color:#aaa}
+.location{color:white!important;font-weight:bold}
+.photo-area{display:flex;align-items:center;justify-content:center;flex-direction:column;gap:15px;min-height:230px;text-align:center}
+.photo-area img{display:none;width:min(100%,270px);max-height:330px;object-fit:cover;border-radius:15px}
+.photo-area img.show{display:block}
+.photo-placeholder{color:#999}
+.photo-placeholder.hide{display:none}
+.music-card{display:grid;grid-template-columns:110px 1fr;align-items:center;gap:20px}
+.album-art{width:110px;height:110px;border-radius:17px;background:linear-gradient(140deg,#fff,#555,#111);color:#111;display:grid;place-items:center;font-size:45px}
+.track-title{font-weight:bold;font-size:20px}
+.track-sub{color:#999;font-size:13px;margin-bottom:12px}
+audio{width:100%;height:40px;filter:grayscale(1)}
+.game-card h3{margin-top:0}
+.game-card p{color:#aaa;font-size:14px}
+.game-row,.rps-buttons,.mood-buttons,.quiz-options{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+input[type=number],.terminal-input{background:#080808;color:white;border:1px solid #444;padding:11px;border-radius:10px;width:120px}
+.small-btn{padding:9px 14px;font-size:13px}
+.small-btn.dark,.rps-buttons button,.mood-btn,.cell{background:#222;color:white;border:1px solid #444}
+.result{margin-top:12px;color:#ddd;min-height:25px;font-size:14px}
+.board{display:grid;grid-template-columns:repeat(3,58px);gap:7px;margin:12px 0}
+.cell{width:58px;height:58px;border-radius:10px;font-size:24px;font-weight:bold}
+.activity-box,.quote{background:#080808;border:1px dashed #444;border-radius:14px;padding:18px;margin:15px 0;min-height:65px;text-align:center}
+.mood-btn{padding:10px 14px;border-radius:12px}
+.mood-btn.active{background:white;color:black}
+.terminal{background:#050505;border:1px solid #444;border-radius:16px;overflow:hidden}
+.terminal-top{padding:12px;border-bottom:1px solid #333;color:#999;font-size:13px}
+.terminal-body{padding:17px;font-family:monospace}
+#terminalOutput{white-space:pre-wrap;min-height:140px;color:#ddd}
+.terminal-line{display:flex;gap:10px;align-items:center}
+.terminal-input{flex:1;width:auto;border:0;border-bottom:1px solid #555;border-radius:0;font-family:monospace}
+footer{text-align:center;color:#777;padding:30px;border-top:1px solid #292929;font-size:13px}
+@media(max-width:700px){
+.nav{align-items:flex-start;flex-direction:column}
+.about-grid,.grid-2{grid-template-columns:1fr}
+.music-card{grid-template-columns:1fr}
+.album-art{width:85px;height:85px}
+h1{letter-spacing:-3px}
 }
 </style>
 </head>
-
 <body>
 
-<!-- HEADER -->
-
 <header>
-  <h1>Hi, I'm Hamodehh Dwairi 🖤</h1>
-  <p>I'm from Jordan, Irbid 🇯🇴</p>
-  <p>Welcome to my little world!</p>
+<div class="wrap nav">
+<a class="brand" href="#home">HAMODEHH <span>/ UNIVERSE</span></a>
+<nav class="nav-links">
+<a href="#about">About</a>
+<a href="#music">Music</a>
+<a href="#games">Games</a>
+<a href="#activities">Activities</a>
+<a href="#mood">Mood</a>
+<a href="#terminal">Terminal</a>
+</nav>
+</div>
 </header>
 
-<!-- NAVIGATION -->
-
-<nav>
-  <a href="#about">About</a>
-  <a href="#music">Music 🎵</a>
-  <a href="#games">Games 🎮</a>
-  <a href="#activities">Activities 🎲</a>
-</nav>
-
-<!-- ABOUT -->
+<main>
+<section class="hero" id="home">
+<div class="wrap">
+<div class="eyebrow">A small corner of the internet</div>
+<h1>MY LITTLE<br><span class="soft">UNIVERSE.</span></h1>
+<p class="hero-copy">Hey, I'm Hamodehh Dwairi. Welcome to my personal universe. Music, games, technology, random thoughts and good vibes.</p>
+<div class="hero-actions">
+<a class="btn" href="#about">Explore my world ↘</a>
+<a class="btn secondary" href="#terminal">Enter terminal</a>
+</div>
+<div class="clock-card">
+<div style="font-size:30px">◷</div>
+<div><div id="clock">--:--:--</div><div id="date">Jordan time</div></div>
+</div>
+</div>
+</section>
 
 <section id="about">
-
-  <div class="card">
-    <h2>About Me</h2>
-
-    <p>Welcome to my personal website!</p>
-    <p>Explore, listen to music and have fun.</p>
-
-    <button onclick="showPhoto()">
-      Click Me 🖤
-    </button>
-
-    <img
-      id="myPhoto"
-      src="Screenshot_20261102-160626~2.jpg"
-      alt="My Photo">
-  </div>
-
+<div class="wrap">
+<div class="section-head">
+<div class="section-kicker">01 / THE PERSON</div>
+<h2>A little about me.</h2>
+<div class="section-note">This is my own little world.</div>
+</div>
+<div class="about-grid">
+<div class="card">
+<h3>Hi, I'm Hamodehh Dwairi.</h3>
+<p class="location">I'm from Jordan, Irbid 🇯🇴</p>
+<p>I enjoy exploring technology, learning new things, listening to music, and finding interesting things in life.</p>
+<p style="color:#888">Stay curious. Keep learning.</p>
+</div>
+<div class="card photo-area">
+<div class="photo-placeholder" id="photoPlaceholder">A picture is hiding here 👀</div>
+<img id="myPhoto" src="Screenshot_20261102-160626~2.jpg" alt="My photo">
+<button class="small-btn" id="photoToggle">Click Me</button>
+</div>
+</div>
+</div>
 </section>
-
-<!-- MUSIC -->
 
 <section id="music">
-
-  <h2>🎵 Music Zone</h2>
-
-  <div class="card">
-
-    <h3>خيالك خيال - فضل شاكر 🖤</h3>
-
-    <p>My favorite song!</p>
-
-    <a class="music-link"
-       href="https://www.youtube.com/results?search_query=فضل+شاكر+خيالك+خيال"
-       target="_blank"
-       rel="noopener noreferrer">
-       Listen Now 🎧
-    </a>
-
-  </div>
-
-  <div class="card">
-
-    <h3>More Music</h3>
-
-    <a class="music-link"
-       href="https://open.spotify.com/"
-       target="_blank"
-       rel="noopener noreferrer">
-       Spotify 🎶
-    </a>
-
-    <a class="music-link"
-       href="https://www.youtube.com/results?search_query=relaxing+music"
-       target="_blank"
-       rel="noopener noreferrer">
-       Relax Music 🌙
-    </a>
-
-    <a class="music-link"
-       href="https://www.youtube.com/results?search_query=best+arabic+songs"
-       target="_blank"
-       rel="noopener noreferrer">
-       Arabic Songs
-    </a>
-
-  </div>
-
+<div class="wrap">
+<div class="section-kicker">02 / SOUNDTRACK</div>
+<h2>Music zone.</h2>
+<div class="card music-card">
+<div class="album-art">♪</div>
+<div>
+<div class="track-title">خيالك خيال</div>
+<div class="track-sub">فضل شاكر · My favourite track</div>
+<audio controls preload="metadata">
+<source src="abdwap2.com_570629.mp3" type="audio/mpeg">
+Your browser does not support audio.
+</audio>
+<p style="color:#888;font-size:12px">Enjoy the music 🎧</p>
+</div>
+</div>
+</div>
 </section>
-
-<!-- GAMES -->
 
 <section id="games">
+<div class="wrap">
+<div class="section-kicker">03 / PLAY TIME</div>
+<h2>Mini games.</h2>
+<div class="grid-2">
 
-  <h2>🎮 Mini Games</h2>
+<div class="card game-card">
+<h3>🎯 Guess the number</h3>
+<p>Guess a number between 1 and 10.</p>
+<div class="game-row">
+<input id="guessInput" type="number" min="1" max="10" placeholder="1 - 10">
+<button class="small-btn" id="guessBtn">Guess</button>
+<button class="small-btn dark" id="newNumber">New game</button>
+</div>
+<div class="result" id="guessResult">Make your first guess.</div>
+</div>
 
-  <div class="card">
+<div class="card game-card">
+<h3>✊ Rock, paper, scissors</h3>
+<p>Can you beat the computer?</p>
+<div class="rps-buttons">
+<button data-rps="rock">✊ Rock</button>
+<button data-rps="paper">✋ Paper</button>
+<button data-rps="scissors">✌️ Scissors</button>
+</div>
+<div class="result" id="rpsResult">Your move?</div>
+</div>
 
-    <h3>Guess The Number</h3>
+<div class="card game-card">
+<h3>⭕ Tic Tac Toe</h3>
+<p>Two players. X starts.</p>
+<div class="board" id="board"></div>
+<div class="result" id="xoResult">Turn: X</div>
+<button class="small-btn dark" id="resetXO">Restart</button>
+</div>
 
-    <p>I'm thinking of a number between 1 and 10!</p>
+<div class="card game-card">
+<h3>🧠 Quick quiz</h3>
+<p>What is the capital of Jordan?</p>
+<div class="quiz-options">
+<button class="small-btn dark quiz-answer" data-answer="Aqaba">Aqaba</button>
+<button class="small-btn dark quiz-answer" data-answer="Amman">Amman</button>
+<button class="small-btn dark quiz-answer" data-answer="Irbid">Irbid</button>
+</div>
+<div class="result" id="quizResult">Choose your answer.</div>
+</div>
 
-    <br>
-
-    <input
-      id="guess"
-      type="number"
-      min="1"
-      max="10"
-      placeholder="Your guess">
-
-    <button onclick="checkGuess()">
-      Guess!
-    </button>
-
-    <p id="result"></p>
-
-  </div>
-
-  <div class="card">
-
-    <h3>Quick Quiz 🧠</h3>
-
-    <p>What is the capital of Jordan?</p>
-
-    <button onclick="quiz('Amman')">Amman</button>
-    <button onclick="quiz('Irbid')">Irbid</button>
-    <button onclick="quiz('Aqaba')">Aqaba</button>
-
-    <p id="quizResult"></p>
-
-  </div>
-
+</div>
+</div>
 </section>
-
-<!-- ACTIVITIES -->
 
 <section id="activities">
-
-  <h2>🎲 Fun Activities</h2>
-
-  <div class="card">
-
-    <h3>What Should I Do Today?</h3>
-
-    <p>Discover a random activity!</p>
-
-    <button onclick="randomActivity()">
-      Surprise Me ✨
-    </button>
-
-    <p id="activity"></p>
-
-  </div>
-
-  <div class="card">
-
-    <h3>What's Your Mood? 🖤</h3>
-
-    <button onclick="mood('happy')">Happy 😁</button>
-    <button onclick="mood('sad')">Sad 😔</button>
-    <button onclick="mood('bored')">Bored 😴</button>
-    <button onclick="mood('excited')">Excited 🔥</button>
-
-    <p id="moodResult"></p>
-
-  </div>
-
+<div class="wrap">
+<div class="section-kicker">04 / RANDOM SPARK</div>
+<h2>What should I do?</h2>
+<div class="card">
+<div class="activity-box" id="activityText">Tap the button and get a random idea ✨</div>
+<button class="small-btn" id="activityBtn">Give me an idea</button>
+</div>
+</div>
 </section>
 
-<!-- FOOTER -->
+<section id="mood">
+<div class="wrap">
+<div class="section-kicker">05 / CHECK IN</div>
+<h2>What's your mood?</h2>
+<div class="card">
+<div class="mood-buttons">
+<button class="mood-btn" data-mood="happy">😊 Happy</button>
+<button class="mood-btn" data-mood="calm">😌 Calm</button>
+<button class="mood-btn" data-mood="tired">😴 Tired</button>
+<button class="mood-btn" data-mood="focused">🎯 Focused</button>
+<button class="mood-btn" data-mood="sad">🌧️ Sad</button>
+</div>
+<div class="quote" id="moodQuote">Choose your mood above.</div>
+</div>
+</div>
+</section>
+
+<section id="terminal">
+<div class="wrap">
+<div class="section-kicker">06 / SECRET ROOM</div>
+<h2>Hidden terminal.</h2>
+<p style="color:#999">Type <b>help</b> to see available commands.</p>
+<div class="terminal">
+<div class="terminal-top">● ● ● &nbsp; hamodehh@universe: ~</div>
+<div class="terminal-body">
+<div id="terminalOutput">Welcome to Hamodehh's terminal.
+Type "help" and press Enter.</div>
+<form class="terminal-line" id="terminalForm">
+<span>visitor@universe:~$</span>
+<input class="terminal-input" id="terminalInput" placeholder="type a command..." autocomplete="off">
+</form>
+</div>
+</div>
+</div>
+</section>
+</main>
 
 <footer>
-
-  <p>Made with <span class="heart">♥</span> by Hamodehh Dwairi</p>
-
-  <p>Jordan 🇯🇴</p>
-
-  <p>Thanks for visiting my website!</p>
-
+Made with curiosity by Hamodehh Dwairi ·
+<a href="#home">Back to top ↑</a>
 </footer>
 
-<!-- JAVASCRIPT -->
-
 <script>
-
-// SHOW AND HIDE PHOTO
-
-function showPhoto() {
-
-  const photo = document.getElementById("myPhoto");
-
-  if (photo.style.display === "block") {
-    photo.style.display = "none";
-  } else {
-    photo.style.display = "block";
-  }
-
+// Jordan clock
+function updateClock(){
+const now=new Date();
+document.getElementById('clock').textContent=new Intl.DateTimeFormat('en-GB',{
+timeZone:'Asia/Amman',hour:'2-digit',minute:'2-digit',second:'2-digit'
+}).format(now);
+document.getElementById('date').textContent=new Intl.DateTimeFormat('en-US',{
+timeZone:'Asia/Amman',weekday:'long',year:'numeric',month:'long',day:'numeric'
+}).format(now)+' · Jordan';
 }
+updateClock();
+setInterval(updateClock,1000);
 
-// NUMBER GAME
+// Photo
+const photo=document.getElementById('myPhoto');
+const placeholder=document.getElementById('photoPlaceholder');
+document.getElementById('photoToggle').onclick=function(){
+const visible=photo.classList.toggle('show');
+placeholder.classList.toggle('hide',visible);
+this.textContent=visible?'Hide Photo':'Click Me';
+};
+photo.onerror=()=>{
+placeholder.textContent='Photo not found. Check the image filename.';
+placeholder.classList.remove('hide');
+};
 
-let secretNumber = Math.floor(Math.random() * 10) + 1;
-
-function checkGuess() {
-
-  const guess = Number(
-    document.getElementById("guess").value
-  );
-
-  const result = document.getElementById("result");
-
-  if (
-    guess < 1 ||
-    guess > 10 ||
-    !Number.isInteger(guess)
-  ) {
-
-    result.textContent = "Enter a number from 1 to 10!";
-
-  } else if (guess === secretNumber) {
-
-    result.textContent = "Correct! You are amazing! 🎉";
-
-    secretNumber = Math.floor(Math.random() * 10) + 1;
-
-  } else if (guess < secretNumber) {
-
-    result.textContent = "Too low! Try again 👀";
-
-  } else {
-
-    result.textContent = "Too high! Try again 👀";
-
-  }
-
+// Guess number
+let secret=Math.floor(Math.random()*10)+1;
+const guessInput=document.getElementById('guessInput');
+const guessResult=document.getElementById('guessResult');
+function checkGuess(){
+const n=Number(guessInput.value);
+if(!guessInput.value||!Number.isInteger(n)||n<1||n>10){
+guessResult.textContent='Enter a number from 1 to 10.';
+}else if(n===secret){
+guessResult.textContent='🎉 Correct! You got it!';
+}else if(n<secret){
+guessResult.textContent='Too low. Try a bigger number.';
+}else{
+guessResult.textContent='Too high. Try a smaller number.';
 }
-
-// QUIZ
-
-function quiz(answer) {
-
-  const result = document.getElementById("quizResult");
-
-  if (answer === "Amman") {
-
-    result.textContent = "Correct! 🇯🇴";
-
-  } else {
-
-    result.textContent = "Wrong! Try again 😄";
-
-  }
-
 }
+document.getElementById('guessBtn').onclick=checkGuess;
+guessInput.onkeydown=e=>{if(e.key==='Enter')checkGuess();};
+document.getElementById('newNumber').onclick=()=>{
+secret=Math.floor(Math.random()*10)+1;
+guessInput.value='';
+guessResult.textContent='New number picked. Good luck!';
+};
 
-// RANDOM ACTIVITIES
+// Rock paper scissors
+document.querySelectorAll('[data-rps]').forEach(btn=>{
+btn.onclick=()=>{
+const choices=['rock','paper','scissors'];
+const labels={rock:'Rock ✊',paper:'Paper ✋',scissors:'Scissors ✌️'};
+const you=btn.dataset.rps;
+const computer=choices[Math.floor(Math.random()*3)];
+let result;
+if(you===computer)result="It's a tie!";
+else if((you==='rock'&&computer==='scissors')||(you==='paper'&&computer==='rock')||(you==='scissors'&&computer==='paper'))result='You win! 🎉';
+else result='Computer wins!';
+document.getElementById('rpsResult').textContent=`You: ${labels[you]} · Computer: ${labels[computer]} — ${result}`;
+};
+});
 
-const activities = [
+// Tic Tac Toe
+const board=document.getElementById('board');
+const xoResult=document.getElementById('xoResult');
+let cells=Array(9).fill('');
+let turn='X',finished=false;
+const wins=[[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
+function renderBoard(){
+board.innerHTML='';
+cells.forEach((mark,i)=>{
+const b=document.createElement('button');
+b.className='cell';b.type='button';b.textContent=mark;
+b.onclick=()=>play(i);
+board.appendChild(b);
+});
+}
+function play(i){
+if(finished||cells[i])return;
+cells[i]=turn;
+if(wins.some(line=>line.every(x=>cells[x]===turn))){
+xoResult.textContent=turn+' wins! 🎉';finished=true;
+}else if(cells.every(Boolean)){
+xoResult.textContent="It's a draw!";finished=true;
+}else{
+turn=turn==='X'?'O':'X';xoResult.textContent='Turn: '+turn;
+}
+renderBoard();
+}
+document.getElementById('resetXO').onclick=()=>{
+cells=Array(9).fill('');turn='X';finished=false;
+xoResult.textContent='Turn: X';renderBoard();
+};
+renderBoard();
 
-  "Listen to your favorite song 🎵",
+// Quiz
+document.querySelectorAll('.quiz-answer').forEach(btn=>{
+btn.onclick=()=>{
+document.getElementById('quizResult').textContent=
+btn.dataset.answer==='Amman'?'✅ Correct! Amman is the capital of Jordan.':'❌ Not quite. Try again!';
+};
+});
 
-  "Watch a great movie 🍿",
-
-  "Learn something new today 🧠",
-
-  "Go for a walk outside 🌳",
-
-  "Play a game with your friends 🎮",
-
-  "Take some cool photos 📸",
-
-  "Try a new hobby ✨",
-
-  "Watch a funny video 😂"
-
+// Random activities
+const activities=[
+'Take a 10-minute walk and get some fresh air.',
+'Learn one new thing about technology today.',
+'Listen to a song without doing anything else.',
+'Tidy up your desk for five minutes.',
+'Solve one puzzle or brain teaser.',
+'Write down one goal for this week.',
+'Drink some water and stretch.',
+'Read two pages of a book.',
+'Watch a video about something interesting.',
+'Take a break and relax.'
 ];
+document.getElementById('activityBtn').onclick=()=>{
+document.getElementById('activityText').textContent=activities[Math.floor(Math.random()*activities.length)];
+};
 
-function randomActivity() {
+// Mood
+const moodMessages={
+happy:'Keep this energy close. Enjoy the good moment! ✨',
+calm:'Breathe slowly. You do not have to rush everything. 🌿',
+tired:'Rest is part of progress. Take a proper break. ☁️',
+focused:'Protect your focus. One task at a time. 🎯',
+sad:'It is okay not to feel okay. Take today gently. 🌧️'
+};
+document.querySelectorAll('.mood-btn').forEach(btn=>{
+btn.onclick=()=>{
+document.querySelectorAll('.mood-btn').forEach(b=>b.classList.remove('active'));
+btn.classList.add('active');
+document.getElementById('moodQuote').textContent=moodMessages[btn.dataset.mood];
+};
+});
 
-  const random = Math.floor(
-    Math.random() * activities.length
-  );
-
-  document.getElementById("activity").textContent =
-    activities[random];
-
+// Terminal
+const output=document.getElementById('terminalOutput');
+const form=document.getElementById('terminalForm');
+const input=document.getElementById('terminalInput');
+const quotes=[
+'Small steps every day lead to big changes.',
+'Stay curious. The world is full of things to learn.',
+'Focus on progress, not perfection.',
+'Your future is created by what you do today.'
+];
+const help='Available commands:\nhelp - show commands\nabout - about this website\nlocation - my location\ntime - Jordan time\ndate - today\ngames - list games\nquote - random quote\nhello - say hello\nclear - clear terminal';
+let history=[];
+function runCommand(raw){
+const command=raw.trim().toLowerCase();
+if(!command)return;
+history.push('visitor@universe:~$ '+raw);
+let response='';
+switch(command){
+case 'help':response=help;break;
+case 'about':response="This is Hamodehh's personal website, built with HTML, CSS and JavaScript.";break;
+case 'location':response='I am from Irbid, Jordan 🇯🇴';break;
+case 'time':response=new Intl.DateTimeFormat('en-GB',{timeZone:'Asia/Amman',hour:'2-digit',minute:'2-digit',second:'2-digit'}).format(new Date())+' (Jordan)';break;
+case 'date':response=new Intl.DateTimeFormat('en-US',{timeZone:'Asia/Amman',dateStyle:'full'}).format(new Date());break;
+case 'games':response='Guess the Number, Rock Paper Scissors, Tic Tac Toe, Quick Quiz.';break;
+case 'quote':response=quotes[Math.floor(Math.random()*quotes.length)];break;
+case 'hello':response='Hey there! Welcome to my universe. 👋';break;
+case 'clear':history=[];output.textContent='Terminal cleared. Type help.';return;
+default:response='Command not found. Type help.';
 }
-
-// MOOD
-
-function mood(type) {
-
-  const messages = {
-
-    happy: "Keep smiling! The world needs your energy 😁",
-
-    sad: "It's okay to have a bad day. Better days are coming 🖤",
-
-    bored: "Let's find something exciting to do! 🎮",
-
-    excited: "That's the spirit! Go make something amazing 🔥"
-
-  };
-
-  document.getElementById("moodResult").textContent =
-    messages[type];
-
+output.textContent=history.slice(-5).join('\n')+'\n'+response;
 }
-
+form.onsubmit=e=>{
+e.preventDefault();
+runCommand(input.value);
+input.value='';
+};
 </script>
-
 </body>
   </html>
-  
