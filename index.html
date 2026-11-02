@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Hamodehh's World ❤️</title>
+<title>Hamodehh's World</title>
 
 <style>
 * {
@@ -19,156 +19,183 @@ html {
 }
 
 body {
-  background: #090909;
-  color: white;
+  background: #080808;
+  color: #fff;
   font-family: Arial, sans-serif;
   text-align: center;
 }
 
+/* HEADER */
+
 header {
-  padding: 45px 15px;
-  background: linear-gradient(135deg, #450000, #111);
-  border-bottom: 2px solid #ff2525;
+  padding: 55px 15px;
+  background: linear-gradient(135deg, #000, #333, #111);
+  border-bottom: 2px solid #fff;
 }
 
 header h1 {
-  color: #ff3030;
-  font-size: 35px;
-  margin-bottom: 12px;
+  font-size: 34px;
+  color: #fff;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
 }
 
 header p {
   color: #ccc;
-  margin: 7px;
+  margin: 8px;
 }
 
+/* NAVIGATION */
+
 nav {
-  padding: 15px 5px;
-  background: #151515;
+  padding: 17px 5px;
+  background: #171717;
+  border-bottom: 1px solid #444;
   position: sticky;
   top: 0;
   z-index: 10;
 }
 
 nav a {
-  color: white;
+  color: #fff;
   text-decoration: none;
   margin: 8px;
   display: inline-block;
   font-size: 14px;
+  transition: 0.3s;
 }
 
 nav a:hover {
-  color: #ff3030;
+  color: #aaa;
 }
 
+/* SECTIONS */
+
 section {
-  padding: 40px 15px;
+  padding: 45px 15px;
   max-width: 850px;
   margin: auto;
 }
 
 h2 {
-  color: #ff3030;
-  margin-bottom: 22px;
+  color: #fff;
+  margin-bottom: 25px;
+  font-size: 27px;
 }
 
 .card {
-  background: #171717;
-  border: 1px solid #4a1717;
-  border-radius: 15px;
-  padding: 25px 18px;
-  margin: 17px auto;
+  background: linear-gradient(145deg, #202020, #101010);
+  border: 1px solid #555;
+  border-radius: 16px;
+  padding: 28px 18px;
+  margin: 18px auto;
   max-width: 650px;
-  box-shadow: 0 0 15px #250000;
+  box-shadow: 0 5px 25px #000;
+  transition: 0.3s;
+}
+
+.card:hover {
+  border-color: #aaa;
+  transform: translateY(-3px);
 }
 
 .card h3 {
-  margin-bottom: 15px;
-  color: #ff7777;
+  color: #eee;
+  margin-bottom: 16px;
 }
 
 .card p {
-  line-height: 1.7;
+  color: #ccc;
+  line-height: 1.8;
 }
 
-button {
-  background: #e51c1c;
-  color: white;
-  border: none;
-  padding: 12px 20px;
-  border-radius: 8px;
+/* BUTTONS */
+
+button,
+.music-link {
+  background: #fff;
+  color: #000;
+  border: 1px solid #fff;
+  padding: 13px 21px;
+  border-radius: 9px;
   margin: 9px 5px;
   cursor: pointer;
   font-size: 15px;
   transition: 0.3s;
-}
-
-button:hover {
-  background: #ff4545;
-  transform: scale(1.05);
-}
-
-.music-link {
   display: inline-block;
-  background: #e51c1c;
-  color: white;
   text-decoration: none;
-  padding: 13px 18px;
-  margin: 8px;
-  border-radius: 8px;
-  transition: 0.3s;
+  font-weight: bold;
 }
 
+button:hover,
 .music-link:hover {
-  background: #ff4545;
+  background: #222;
+  color: #fff;
   transform: scale(1.05);
 }
+
+/* PHOTO */
 
 #myPhoto {
   display: none;
   width: 220px;
   max-width: 90%;
   border-radius: 15px;
-  margin: 20px auto;
-  border: 3px solid #ff3030;
+  margin: 22px auto;
+  border: 3px solid #fff;
 }
 
+/* INPUT */
+
 input {
-  padding: 12px;
-  width: 140px;
+  padding: 13px;
+  width: 145px;
   border-radius: 8px;
-  border: none;
+  border: 1px solid #aaa;
+  background: #222;
+  color: #fff;
   text-align: center;
   font-size: 16px;
 }
+
+/* GAME RESULTS */
 
 #result,
 #activity,
 #moodResult,
 #quizResult {
-  color: #ff7777;
-  margin-top: 17px;
+  color: #fff;
+  margin-top: 18px;
   font-size: 18px;
   min-height: 25px;
 }
 
+/* FOOTER */
+
 footer {
   background: #151515;
-  padding: 28px;
-  color: #999;
-  border-top: 1px solid #8b1515;
+  padding: 30px 15px;
+  color: #aaa;
+  border-top: 1px solid #555;
   line-height: 2;
 }
 
 .heart {
-  color: red;
-  animation: beat 1s infinite;
+  color: #fff;
 }
 
-@keyframes beat {
-  50% {
-    transform: scale(1.2);
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 27px;
+  }
+
+  nav a {
+    margin: 6px;
+    font-size: 12px;
+  }
+
+  section {
+    padding: 30px 12px;
   }
 }
 </style>
@@ -176,11 +203,15 @@ footer {
 
 <body>
 
+<!-- HEADER -->
+
 <header>
-  <h1>Hi, I'm Hamodehh Dwairi ❤️</h1>
+  <h1>Hi, I'm Hamodehh Dwairi 🖤</h1>
   <p>I'm from Jordan, Irbid 🇯🇴</p>
   <p>Welcome to my little world!</p>
 </header>
+
+<!-- NAVIGATION -->
 
 <nav>
   <a href="#about">About</a>
@@ -192,28 +223,34 @@ footer {
 <!-- ABOUT -->
 
 <section id="about">
+
   <div class="card">
-    <h2>About Me ❤️</h2>
+    <h2>About Me</h2>
 
     <p>Welcome to my personal website!</p>
     <p>Explore, listen to music and have fun.</p>
 
-    <button onclick="showPhoto()">Click Me ❤️</button>
+    <button onclick="showPhoto()">
+      Click Me 🖤
+    </button>
 
     <img
       id="myPhoto"
       src="Screenshot_20261102-160626~2.jpg"
       alt="My Photo">
   </div>
+
 </section>
 
 <!-- MUSIC -->
 
 <section id="music">
+
   <h2>🎵 Music Zone</h2>
 
   <div class="card">
-    <h3>خيالك خيال - فضل شاكر ❤️</h3>
+
+    <h3>خيالك خيال - فضل شاكر 🖤</h3>
 
     <p>My favorite song!</p>
 
@@ -223,16 +260,18 @@ footer {
        rel="noopener noreferrer">
        Listen Now 🎧
     </a>
+
   </div>
 
   <div class="card">
-    <h3>More Music 🎶</h3>
+
+    <h3>More Music</h3>
 
     <a class="music-link"
        href="https://open.spotify.com/"
        target="_blank"
        rel="noopener noreferrer">
-       Spotify
+       Spotify 🎶
     </a>
 
     <a class="music-link"
@@ -246,17 +285,21 @@ footer {
        href="https://www.youtube.com/results?search_query=best+arabic+songs"
        target="_blank"
        rel="noopener noreferrer">
-       Arabic Songs 🎵
+       Arabic Songs
     </a>
+
   </div>
+
 </section>
 
 <!-- GAMES -->
 
 <section id="games">
+
   <h2>🎮 Mini Games</h2>
 
   <div class="card">
+
     <h3>Guess The Number</h3>
 
     <p>I'm thinking of a number between 1 and 10!</p>
@@ -270,12 +313,16 @@ footer {
       max="10"
       placeholder="Your guess">
 
-    <button onclick="checkGuess()">Guess!</button>
+    <button onclick="checkGuess()">
+      Guess!
+    </button>
 
     <p id="result"></p>
+
   </div>
 
   <div class="card">
+
     <h3>Quick Quiz 🧠</h3>
 
     <p>What is the capital of Jordan?</p>
@@ -285,15 +332,19 @@ footer {
     <button onclick="quiz('Aqaba')">Aqaba</button>
 
     <p id="quizResult"></p>
+
   </div>
+
 </section>
 
 <!-- ACTIVITIES -->
 
 <section id="activities">
+
   <h2>🎲 Fun Activities</h2>
 
   <div class="card">
+
     <h3>What Should I Do Today?</h3>
 
     <p>Discover a random activity!</p>
@@ -303,10 +354,12 @@ footer {
     </button>
 
     <p id="activity"></p>
+
   </div>
 
   <div class="card">
-    <h3>What's Your Mood? ❤️</h3>
+
+    <h3>What's Your Mood? 🖤</h3>
 
     <button onclick="mood('happy')">Happy 😁</button>
     <button onclick="mood('sad')">Sad 😔</button>
@@ -314,20 +367,31 @@ footer {
     <button onclick="mood('excited')">Excited 🔥</button>
 
     <p id="moodResult"></p>
+
   </div>
+
 </section>
 
+<!-- FOOTER -->
+
 <footer>
-  <p>Made with <span class="heart">❤️</span> by Hamodehh Dwairi</p>
+
+  <p>Made with <span class="heart">♥</span> by Hamodehh Dwairi</p>
+
   <p>Jordan 🇯🇴</p>
+
   <p>Thanks for visiting my website!</p>
+
 </footer>
+
+<!-- JAVASCRIPT -->
 
 <script>
 
-// Show and hide photo
+// SHOW AND HIDE PHOTO
 
 function showPhoto() {
+
   const photo = document.getElementById("myPhoto");
 
   if (photo.style.display === "block") {
@@ -335,82 +399,121 @@ function showPhoto() {
   } else {
     photo.style.display = "block";
   }
+
 }
 
-// Number game
+// NUMBER GAME
 
 let secretNumber = Math.floor(Math.random() * 10) + 1;
 
 function checkGuess() {
-  const guess = Number(document.getElementById("guess").value);
+
+  const guess = Number(
+    document.getElementById("guess").value
+  );
+
   const result = document.getElementById("result");
 
-  if (guess < 1 || guess > 10 || !Number.isInteger(guess)) {
+  if (
+    guess < 1 ||
+    guess > 10 ||
+    !Number.isInteger(guess)
+  ) {
+
     result.textContent = "Enter a number from 1 to 10!";
-  }
 
-  else if (guess === secretNumber) {
+  } else if (guess === secretNumber) {
+
     result.textContent = "Correct! You are amazing! 🎉";
+
     secretNumber = Math.floor(Math.random() * 10) + 1;
-  }
 
-  else if (guess < secretNumber) {
+  } else if (guess < secretNumber) {
+
     result.textContent = "Too low! Try again 👀";
+
+  } else {
+
+    result.textContent = "Too high! Try again 👀";
+
   }
 
-  else {
-    result.textContent = "Too high! Try again 👀";
-  }
 }
 
-// Quiz
+// QUIZ
 
 function quiz(answer) {
+
   const result = document.getElementById("quizResult");
 
   if (answer === "Amman") {
-    result.textContent = "Correct! 🇯🇴🔥";
+
+    result.textContent = "Correct! 🇯🇴";
+
   } else {
+
     result.textContent = "Wrong! Try again 😄";
+
   }
+
 }
 
-// Random activities
+// RANDOM ACTIVITIES
 
 const activities = [
+
   "Listen to your favorite song 🎵",
+
   "Watch a great movie 🍿",
+
   "Learn something new today 🧠",
+
   "Go for a walk outside 🌳",
+
   "Play a game with your friends 🎮",
+
   "Take some cool photos 📸",
+
   "Try a new hobby ✨",
+
   "Watch a funny video 😂"
+
 ];
 
 function randomActivity() {
-  const random = Math.floor(Math.random() * activities.length);
+
+  const random = Math.floor(
+    Math.random() * activities.length
+  );
 
   document.getElementById("activity").textContent =
     activities[random];
+
 }
 
-// Mood messages
+// MOOD
 
 function mood(type) {
+
   const messages = {
+
     happy: "Keep smiling! The world needs your energy 😁",
-    sad: "It's okay to have a bad day. Better days are coming ❤️",
+
+    sad: "It's okay to have a bad day. Better days are coming 🖤",
+
     bored: "Let's find something exciting to do! 🎮",
+
     excited: "That's the spirit! Go make something amazing 🔥"
+
   };
 
   document.getElementById("moodResult").textContent =
     messages[type];
+
 }
 
 </script>
 
 </body>
-      </html>
-      
+  </html>
+  
