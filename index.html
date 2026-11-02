@@ -2,130 +2,234 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>My Cyber World</title>
+<title>Hamodehh Dwairi</title>
 
-    <style>
-        * {
-            box-sizing: border-box;
-        }
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-        body {
-            margin: 0;
-            background: #080f1c;
-            color: white;
-            font-family: Arial, sans-serif;
-            text-align: center;
-        }
+body {
+    background: #090909;
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    min-height: 100vh;
+}
 
-        header {
-            padding: 25px;
-            background: #101d30;
-            border-bottom: 1px solid #00e5a0;
-        }
+/* Navigation */
+nav {
+    padding: 22px;
+    background: #111;
+    border-bottom: 1px solid #ff2020;
+}
 
-        h1 {
-            color: #00e5a0;
-            font-size: 32px;
-        }
+nav h2 {
+    color: #ff2525;
+    letter-spacing: 3px;
+}
 
-        .container {
-            padding: 35px 15px;
-        }
+/* Main section */
+.hero {
+    padding: 75px 20px 40px;
+}
 
-        .photo {
-            width: 220px;
-            height: 220px;
-            object-fit: cover;
-            border-radius: 50%;
-            border: 3px solid #00e5a0;
-            box-shadow: 0 0 25px #00e5a055;
-        }
+.hero h1 {
+    font-size: clamp(30px, 7vw, 48px);
+    margin-bottom: 20px;
+}
 
-        p {
-            color: #b8c5d8;
-            font-size: 17px;
-        }
+.hero h1 span {
+    color: #ff2525;
+    text-shadow: 0 0 20px #ff252566;
+}
 
-        button {
-            background: #00e5a0;
-            color: #08111e;
-            border: none;
-            padding: 14px 25px;
-            border-radius: 8px;
-            font-weight: bold;
-            font-size: 16px;
-            margin-top: 15px;
-            cursor: pointer;
-        }
+.hero p {
+    color: #bbb;
+    font-size: 19px;
+    margin: 15px 0;
+}
 
-        button:hover {
-            background: white;
-        }
+.location {
+    color: #ff5555 !important;
+    font-size: 17px !important;
+}
 
-        .card {
-            background: #101d30;
-            margin: 30px auto;
-            padding: 25px;
-            max-width: 450px;
-            border-radius: 15px;
-            border: 1px solid #243b55;
-        }
+/* Decorative line */
+.line {
+    width: 100px;
+    height: 4px;
+    background: #ff2525;
+    margin: 25px auto;
+    border-radius: 10px;
+    box-shadow: 0 0 15px red;
+}
 
-        footer {
-            padding: 20px;
-            color: #718096;
-        }
-    </style>
+/* Button */
+button {
+    background: #ff2525;
+    color: white;
+    border: none;
+    padding: 16px 38px;
+    border-radius: 30px;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 25px;
+    box-shadow: 0 0 20px #ff252566;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: white;
+    color: red;
+    transform: scale(1.08);
+}
+
+/* Image */
+.photo-box {
+    display: none;
+    margin: 35px auto;
+    animation: appear 0.8s ease;
+}
+
+.photo-box.show {
+    display: block;
+}
+
+.photo {
+    width: 230px;
+    height: 230px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #ff2525;
+    box-shadow: 0 0 30px #ff252599;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* About card */
+.card {
+    background: #151515;
+    border: 1px solid #492020;
+    border-radius: 18px;
+    padding: 30px 20px;
+    max-width: 450px;
+    margin: 35px auto;
+    box-shadow: 0 0 25px #ff000015;
+}
+
+.card h2 {
+    color: #ff3030;
+    margin-bottom: 15px;
+}
+
+.card p {
+    color: #ccc;
+    line-height: 1.7;
+}
+
+/* Footer */
+footer {
+    padding: 30px 15px;
+    color: #777;
+    border-top: 1px solid #292929;
+    margin-top: 50px;
+}
+
+footer span {
+    color: #ff3030;
+}
+
+</style>
 </head>
 
 <body>
 
-    <header>
-        <h1>MY CYBER WORLD</h1>
-        <p>Explore the world of technology</p>
-    </header>
+<nav>
+    <h2>HAMODEHH.</h2>
+</nav>
 
-    <div class="container">
+<section class="hero">
+
+    <h1>
+        Hi, I'm <span>Hamodehh Dwairi</span>
+    </h1>
+
+    <div class="line"></div>
+
+    <p class="location">
+        🇯🇴 I'm from Jordan, Irbid
+    </p>
+
+    <p>
+        Welcome to my personal website.
+    </p>
+
+    <button onclick="showPhoto()">
+        Click Me ❤️
+    </button>
+
+    <div class="photo-box" id="myPhoto">
 
         <img
             src="Screenshot_20261102-160626~2.jpg"
-            alt="My Photo"
+            alt="Hamodehh's Photo"
             class="photo"
         >
 
-        <h2>Welcome to My Website!</h2>
-
-        <p>
-            Learning Programming and Cybersecurity
+        <p style="color:#ff5555; margin-top:15px;">
+            Nice to meet you! ❤️
         </p>
-
-        <div class="card">
-            <h2>About This Website</h2>
-
-            <p>
-                This is my first personal website.
-                I am learning HTML, CSS and JavaScript.
-            </p>
-
-            <button onclick="showMessage()">
-                Click Me
-            </button>
-        </div>
 
     </div>
 
-    <footer>
-        My Cyber World | 2026
-    </footer>
+</section>
 
-    <script>
-        function showMessage() {
-            alert("Welcome to My Cyber World!");
-        }
-    </script>
+<div class="card">
+
+    <h2>About Me</h2>
+
+    <p>
+        Hello everyone!
+        Welcome to my little corner of the internet.
+        I'm happy to have you here.
+        Stay awesome and enjoy your day!
+    </p>
+
+</div>
+
+<footer>
+    Made with <span>♥</span> by Hamodehh Dwairi
+    <br><br>
+    © 2026 All Rights Reserved
+</footer>
+
+<script>
+
+function showPhoto() {
+
+    const photo = document.getElementById("myPhoto");
+
+    photo.classList.toggle("show");
+
+}
+
+</script>
 
 </body>
 </html>
